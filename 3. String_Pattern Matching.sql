@@ -31,19 +31,34 @@ INSERT INTO employees (emp_name, job_title, department, email, city) VALUES
 ('Rachel Kim', 'HR Coordinator', 'HR', 'rachel.k@bizgroup.org', 'New York'),
 ('Sam Wilson', 'Network Engineer', 'IT', 'sam.w@techcorp.com', 'Atlanta'),
 ('Tina Brown', 'Sales Associate', 'Sales', 'tina.brown@sellmore.co', 'Chicago');
-
 -- 1 Find employees whose names start with the letter ‘A’.
+select emp_name from employees where emp_name like "a%";
 -- 2 Find employees whose names end with the letter ‘n’.
+select emp_name from employees where emp_name like "%N";
 -- 3 Find employees whose names contain the substring ‘li’.
+select emp_name from employees where emp_name like "%li%";
 -- 4 Find employees whose email addresses contain an underscore (_) character.
+select email from employees where email like "%\_%";
 -- 5 Find employees whose job title contains the word ‘Manager’.
+select job_title from employees where job_title like "%Manager%";
 -- 6 Find employees whose email addresses end with ‘.com’.
+select email from employees where email like "%.com";
 -- 7 Find employees who are from cities starting with the letter ‘S’.
+select city from employees where city like "s%";
 -- 8 Find employees whose name’s second letter is ‘i’.
+select emp_name from employees where emp_name like "_i%";
 -- 9 Find employees whose department name has exactly two characters.
+select department from employees where department like "__";
 -- 1️0 Find employees whose email domain is ‘techcorp.com’.
+select email from employees where email like "%techcorp.com%";
 -- 11 Find employees whose names do not contain the letter ‘a’.
+select emp_name from employees where emp_name not like "%a%";
 -- 1️2 Find employees whose email contains any numeric digit.
+select email from employees where email like "%0%"or email like"%1%"or email like "%2%" or email like "%3%" or email like"%4%"
+or email like"%5%"or email like "%6%" or email like "%7%"or email like "%8%" or email like"%9%";
 -- 13 Find employees whose job title contains either ‘Developer’ or ‘Engineer’.
+select job_title from employees where job_title like "%Developer%"or"%Engineer%";
 -- 14 Find employees whose names start with a consonant (not a vowel).
+select emp_name from employees where emp_name  not like "%a%" or "%e%"or"i"or"%o%"or"%u%" ;
 -- 1️5 Find employees whose email ends with ‘.in’ or ‘.org’.
+select email from employees where email like "%.in" or email like "%.org";
